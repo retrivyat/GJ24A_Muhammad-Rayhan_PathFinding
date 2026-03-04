@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class enemychasing : MonoBehaviour
+public class enemypathfinding : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    NavMeshAgent agent; 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Transform target;
+
+    private NavMeshAgent agent;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -13,7 +13,6 @@ public class enemychasing : MonoBehaviour
         agent.updateUpAxis = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         agent.SetDestination(target.position);
